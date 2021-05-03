@@ -5,76 +5,91 @@
 
 .parallax {
     width: 100%;
-    height: 300px;
-    border: 1px solid black;
+    height: 650px;
     position: absolute;
     top: 0;
     left: 0;
+}
 
+
+@keyframes loader {
+    from {background-position-x:0;}
+    to {background-position-x: -2000px;}
 }
 
 .n_01 {
     background: url('img/01_ground.png');
     background-size: contain;
     z-index: 11;
+    animation: loader 20s linear infinite;
 }
 
 .n_02 {
     background-image: url("img/02_trees and bushes.png");
     background-size: contain;
     z-index: 10;
+    animation: loader 40s linear infinite;
 }
 
 .n_03 {
     background-image: url('img/03_distant_trees.png');
     background-size: contain;
     z-index: 9;
+    animation: loader 45s linear infinite;
 }
 
 .n_04 {
     background-image: url('img/04_bushes.png');
     background-size: contain;
     z-index: 8;
+    animation: loader 50s linear infinite;
 }
 
 .n_05 {
     background-image: url('img/05_hill1.png');
     background-size: contain;
     z-index: 7;
+    animation: loader 55s linear infinite;
 }
 
 .n_06 {
     background-image: url('img/06_hill2.png');
     background-size: contain;
     z-index: 6;
+    animation: loader 60s linear infinite;
 }
 
 .n_07 {
     background-image: url('img/07_huge_clouds.png');
     background-size: contain;
     z-index: 5;
+    animation: loader 65s linear infinite;
 }
 
 .n_08 {
     background-image: url('img/08_clouds.png');
     background-size: contain;
     z-index: 4;
+    animation: loader 70s linear infinite;
 }
 
 .n_09 {
     background-image: url('img/09_distant_clouds1.png');
     background-size: contain;
     z-index: 3;
+    animation: loader 75s backwards infinite;
 }
 
 .n_10 {
     background-image: url('img/10_distant_clouds.png');
     background-size: contain;
     z-index: 2;
+    animation: loader 80s steps(1000) infinite;
 }
 
 .n_11 {
     background-image: url('img/11_background.png');
     background-size: contain;
     z-index: 1;
+    position: static;
 }
