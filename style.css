@@ -1,7 +1,7 @@
 /*css variable*/
 :root{
     --startLeft: 0px;
-    --targetLeft: -2100px;
+    --targetLeft: -2048px;
 }
 
 /*css*/
@@ -35,6 +35,7 @@
         background-position-x: var(--targetLeft);
     }
 }
+
 
 
 .n_01 {
@@ -94,21 +95,21 @@
     background-image: url('img/08_clouds.png');
     background-size: contain;
     z-index: 4;
-    animation: loader 70s linear infinite;
+    animation: loader 50s linear infinite;
 }
 
 .n_09 {
     background-image: url('img/09_distant_clouds1.png');
     background-size: contain;
     z-index: 3;
-    animation: loader 75s backwards infinite;
+    animation: loader 65s linear infinite;
 }
 
 .n_10 {
     background: #1d1919 url('img/10_distant_clouds.png');
     background-size: contain;
     z-index: 2;
-    animation: loader 80s steps(1000) infinite;
+    animation: loader 80s linear infinite;
 }
 
 .n_11 {
@@ -127,6 +128,7 @@
     z-index: 11;
     top: 260px;
     left: 350px;
+    transition: top linear 0.5s;
 }
 
 .spritesheet {
@@ -147,6 +149,7 @@
     top: -53px;
 }
 
+
 @keyframes walkanimation {
     from {
         transform: translate3d(0%, 0%, 0)
@@ -156,3 +159,16 @@
     }
 }
 
+.jump{
+    animation: jump 900ms ;
+}
+
+@keyframes jump {
+    0%{
+        top: 260px;
+    }
+    100%{
+        top: 200px;
+    }
+
+}
