@@ -1,5 +1,5 @@
 /*css variable*/
-:root{
+:root {
     --startLeft: 0px;
     --targetLeft: -2048px;
 }
@@ -19,11 +19,11 @@
     left: 0;
 }
 
-.backgroundLeft{
+.backgroundLeft {
     animation-direction: normal !important;
 }
 
-.backgroundRight{
+.backgroundRight {
     animation-direction: reverse !important;
 }
 
@@ -37,7 +37,6 @@
 }
 
 
-
 .n_01 {
     background: url('img/01_ground.png');
     background-size: contain;
@@ -45,14 +44,20 @@
     animation: loader 20s linear infinite;
 }
 
+.bearTrap {
+    background: url('img/monsters.png');
+    background-size: contain;
+    z-index: 12;
+    animation: loader 20s linear infinite;
+    bottom: 60px;
+}
+
+
 .n_02 {
     background-image: url("img/02_trees and bushes.png");
     background-size: contain;
     z-index: 10;
-    animation: loader;
-    animation-duration: 40s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: loader 40s linear infinite;
 }
 
 .n_03 {
@@ -119,14 +124,15 @@
     position: static;
 }
 
+
 /* character*/
 .char {
     overflow: hidden;
     width: 32px;
     height: 53px;
     position: absolute;
-    z-index: 11;
-    top: 260px;
+    z-index: 12;
+    top: 280px;
     left: 350px;
     transition: top linear 0.5s;
 }
@@ -140,7 +146,7 @@
     top: -106px;
     animation: walkanimation 0.7s steps(4) infinite;
 }
-
+ /* character walking */
 .spritesheet[direction=ArrowRight] {
     top: -106px;
 }
@@ -159,16 +165,52 @@
     }
 }
 
-.jump{
-    animation: jump 900ms ;
+/* character jumping */
+.jump {
+    animation: jump 900ms;
 }
 
 @keyframes jump {
-    0%{
-        top: 260px;
+    0% {
+        top: 280px;
     }
-    100%{
-        top: 200px;
+    100% {
+        top: 180px;
     }
 
 }
+
+
+/* dragon*/
+.spritesheetD {
+    background: url('img/drag.png') no-repeat no-repeat;
+    position: absolute;
+    background-size: 100%;
+    width: 480px;
+    height: 591px;
+    top: -110px;
+    animation: flyanimation 1s steps(3) infinite;
+}
+
+.dragon {
+    overflow: hidden;
+    width: 142px;
+    height: 148px;
+    position: absolute;
+    z-index: 12;
+    top: 50px;
+    left: 550px;
+    transition: top linear 0.5s;
+    animation: loader 1s linear infinite;
+}
+
+@keyframes flyanimation {
+    from {
+        transform: translate3d(0%, 0%, 0)
+    }
+    to {
+        transform: translate3d(-100%, 0%, 0)
+    }
+}
+
+
