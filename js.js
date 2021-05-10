@@ -4,24 +4,22 @@ document.addEventListener('keydown', (event) => {
     let spritesheet = document.querySelector('.spritesheet');
     let char = document.querySelector('.char');
     let parallax = document.querySelectorAll('.parallax');
+    let dragon = document.querySelector('.dragon');
+    let spriteDragon = document.querySelector(".spritesheetD");
 
     switch (event.key) {
         case'ArrowLeft':
             spritesheet.setAttribute('direction', 'ArrowLeft');
+            spriteDragon.setAttribute('direction','ArrowLeft');
             parallax.forEach(element => {
-                // console.log(window.getComputedStyle(element).backgroundPositionX);
-                // trying to make the direction change smoother
-                //     element.style.setProperty('--startLeft', 2100 - parseFloat(window.getComputedStyle(element).backgroundPositionX) + "px");
-                //     element.style.setProperty('--targetLeft', '0');
                 element.classList.remove('backgroundLeft');
                 element.classList.add('backgroundRight');
             })
             break;
         case'ArrowRight':
             spritesheet.setAttribute('direction', 'ArrowRight');
+            spriteDragon.setAttribute('direction','ArrowRight');
             parallax.forEach(element => {
-                //     element.style.setProperty('--startLeft', 2100 - parseFloat(window.getComputedStyle(element).backgroundPositionX) + "px");
-                //     element.style.setProperty('--targetLeft', '-2100px');
                 element.classList.remove('backgroundRight');
                 element.classList.add('backgroundLeft');
             })
@@ -32,11 +30,10 @@ document.addEventListener('keydown', (event) => {
             if (jumpUp === false) {
                 function jump() {
                     char.classList.remove('jump');
-                    setTimeout(() => {
-                        char.classList.add('jump')
-                    }, 1)
+                    char.style.animation = '';
+                    char.style.animation = ' jump 900ms';
+                    char.classList.add('jump')
                 }
-
                 jump();
             }
             return false;
