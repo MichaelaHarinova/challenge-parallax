@@ -30,10 +30,13 @@ document.addEventListener('keydown', (event) => {
             if (jumpUp === false) {
                 function jump() {
                     char.classList.remove('jump');
-                    char.style.animation = '';
-                    char.style.animation = ' jump 900ms';
-                    char.classList.add('jump')
+                    setTimeout(() => {
+                        char.classList.add('jump')
+                       // char.style.animation = ' jump 900ms';
+                       // char.style.animation.remove;
+                    }, 1)
                 }
+
                 jump();
             }
             return false;
